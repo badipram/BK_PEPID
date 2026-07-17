@@ -1,0 +1,148 @@
+.survei {
+  min-height: calc(100vh - 135px);
+  background: #bde4ef;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.identity-card,
+.question-container,
+.result-card {
+  background: #7ea8d9;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  width: 140px;
+  font-weight: 600;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #f7e8a6;
+  font-weight: 500;
+}
+
+.alert {
+    background:#95BDD7;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+.alert-label {
+    font-weight: 500;
+}
+
+.alert-label ul {
+    margin-left:30px;
+}
+
+.start-btn,
+.navigation-buttons button,
+.back-btn {
+  background: #f7e8a6;
+  border: none;
+  padding : 10px 15px;
+  border-radius: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.survei-info {
+  background: #a5c6e9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.survei-info p {
+    background: #f7e8a6;
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+.survei-info .isi {
+   margin-left: 8px;
+}
+
+.question-card {
+  background: #8eb4df;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.question-card h3 {
+  background: #f7e8a6;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-item {
+  background: #a5c6e9;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+ 
+}
+
+.option-item input {
+    margin-right: 10px;
+}
+
+.option-item input[type="radio"] {
+  accent-color: #f7e8a6;
+  width: 18px;
+  height: 15px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.result-card {
+  text-align: center;
+}
+
+.result-card h2 {
+  margin-bottom: 8px;
+}
+
+.result-card p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.result-card .back-btn {
+    font-size: 16px;
+}
+
+.emoji {
+  font-size: 100px;
+  margin-bottom: 10px;
+  margin-top: 10vh;
+}

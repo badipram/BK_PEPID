@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#BDE4EF;
+}
+
+.description{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.home{
+    padding:40px 60px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:80px;
+}
+
+.row img{
+    width:700px;
+}
+
+.card{
+    width:950px;
+    background:#7FA6D9;
+    padding:25px;
+    border-radius:10px;
+    color:black;
+    line-height:1.9;
+    text-align:justify;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+}
+
+.reverse{
+    flex-direction:row;
+}

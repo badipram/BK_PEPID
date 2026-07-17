@@ -1,0 +1,36 @@
+.about{
+    min-height: calc(100vh - 135px);
+    background:#BFE4EE;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+    padding:40px 80px;
+}
+
+.about-left{
+    flex:1;
+}
+
+.about-right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.about-right img{
+    width:520px;
+}
+
+.about-card{
+    background:#7EA8D9;
+    border-radius:10px;
+    padding:28px;
+    line-height:2;
+    text-align:justify;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+}
+
+.about-card p{
+    font-size:20px;
+}
