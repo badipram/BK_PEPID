@@ -58,10 +58,27 @@
 .back-btn {
   background: #f7e8a6;
   border: none;
-  padding : 10px 15px;
+  padding: 10px 15px;
   border-radius: 8px;
   font-weight: 900;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.start-btn:hover,
+.navigation-buttons button:hover,
+.back-btn:hover {
+  background: #ffd95a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn:active,
+.navigation-buttons button:active,
+.back-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .survei-info {
@@ -145,4 +162,44 @@
   font-size: 100px;
   margin-bottom: 10px;
   margin-top: 10vh;
+}
+
+.result-buttons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.download-btn,
+.back-btn{
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.download-btn{
+    background: #B4E1EB;
+    color: black;
+    box-shadow: 0 4px 12px rgba(110,168,229,.3);
+}
+
+.download-btn:hover{
+    background:#5a97d8;
+    transform: translateY(-2px);
+}
+
+.back-btn{
+    background:#F7E8A6;
+    color:#000;
+    box-shadow:0 4px 12px rgba(247,232,166,.4);
+}
+
+.back-btn:hover{
+    background:#f3df82;
+    transform: translateY(-2px);
 }

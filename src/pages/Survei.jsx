@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import questions from "../data/questions";
 import "../styles/Survei.css";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 const options = [
   { label: "Sangat Setuju", value: 5 },
@@ -53,6 +55,87 @@ function Survei() {
       setCurrentQuestion(currentQuestion - 1);
     }
   };
+
+  const downloadPDF = () => {
+  const doc = new jsPDF();
+
+  // Judul
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(15);
+  doc.text("PEPID - Pantau Emosi Peserta Didik", 105, 18, {
+    align: "center",
+  });
+
+  doc.setFontSize(11);
+
+  doc.text(
+    "Fakultas Tarbiyah dan Keguruan - Program Studi Bimbingan dan Konseling",
+    105,
+    25,
+    { align: "center" }
+  );
+
+  doc.text("Institut Daarul Qur'an", 105, 31, {
+    align: "center",
+  });
+
+  doc.setFontSize(9);
+
+  doc.text(
+    "Jl. Cipondoh Makmur Raya RT003/RW009, Cipondoh Makmur",
+    105,
+    37,
+    { align: "center" }
+  );
+
+  doc.text(
+    "Kec. Cipondoh, Kota Tangerang, Banten 15148",
+    105,
+    42,
+    { align: "center" }
+  );
+
+  doc.line(10, 48, 200, 48);
+
+  // Judul hasil
+  doc.setFontSize(14);
+  doc.setFont("helvetica", "bold");
+  doc.text("HASIL SURVEI", 105, 60, { align: "center" });
+
+  doc.setFontSize(11);
+
+  doc.text(`Nama : ${student.name}`, 15, 72);
+  doc.text(`Kelas : ${student.kelas}`, 15, 80);
+  doc.text(`Skor Rata-rata : ${average.toFixed(2)}`, 15, 88);
+  doc.text(`Hasil : ${result}`, 15, 96);
+
+  autoTable(doc, {
+    startY: 105,
+
+    head: [["No", "Pertanyaan", "Jawaban"]],
+
+    body: questions.map((q, index) => [
+      index + 1,
+      q.text,
+      options.find((o) => o.value === answers[index])?.label,
+    ]),
+
+    headStyles: {
+      fillColor: [52, 122, 183],
+    },
+
+    styles: {
+      fontSize: 9,
+      cellPadding: 2,
+    },
+
+    alternateRowStyles: {
+      fillColor: [245, 245, 245],
+    },
+  });
+
+  doc.save(`Hasil-Survei-${student.name}.pdf`);
+};
 
   const total = answers.reduce((a, b) => a + b, 0);
   const average = total / questions.length;
@@ -183,12 +266,21 @@ function Survei() {
               Terima kasih telah mengisi kuisioner. <br /> Jawaban Anda
               akan digunakan sebagai bahan evaluasi sekolah.
             </p>
+          <div className="result-buttons">
+            <button
+              className="download-btn"
+              onClick={downloadPDF}
+            >
+              📄 Download PDF
+            </button>
+
             <button
               className="back-btn"
               onClick={() => (window.location.href = "/")}
             >
               Kembali ke Beranda
             </button>
+          </div>
           </div>
         )}
       </section>
