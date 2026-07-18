@@ -137,10 +137,23 @@ function Survei() {
   doc.save(`Hasil-Survei-${student.name}.pdf`);
 };
 
-  const total = answers.reduce((a, b) => a + b, 0);
-  const average = total / questions.length;
+  // const total = answers.reduce((a, b) => a + b, 0);
+  // const average = total / questions.length;
 
-  // eslint-disable-next-line no-useless-assignment
+  const total = answers.reduce((sum, answer, index) => {
+  if (questions[index].reverse) {
+    return sum + (6 - answer);
+  }
+
+  return sum + answer;
+}, 0);
+
+const average =
+  answers.length === questions.length
+    ? total / questions.length
+    : 0;
+
+   
   let result = "";
   // eslint-disable-next-line no-useless-assignment
   let emoji = "";
