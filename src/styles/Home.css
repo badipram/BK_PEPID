@@ -43,3 +43,60 @@ body{
 .reverse{
     flex-direction:row;
 }
+
+@media (max-width: 900px) {
+    .home{
+        padding:20px;
+    }
+
+    .row{
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:flex-start;
+        gap:20px;
+        margin-bottom:40px;
+    }
+
+    .row img{
+        width:100%;
+        max-width:420px;
+        height:auto;
+        margin:0 auto;
+    }
+
+    .card{
+        width:100%;
+        background:#7FA6D9;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:none;
+    }
+
+    .description{
+        font-size:18px;
+    }
+
+    .reverse{
+        flex-direction:column-reverse;
+    }
+}
+
+@media (max-width: 420px) {
+    .home{
+        padding:16px;
+    }
+
+    .description{
+        font-size:16px;
+    }
+
+    .card{
+        padding:16px;
+        font-size:15px;
+    }
+
+    .row img{
+        max-width:100%;
+    }
+}
